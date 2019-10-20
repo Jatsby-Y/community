@@ -1,4 +1,4 @@
-package life.coder.community.community.controller;
+package life.coder.community.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

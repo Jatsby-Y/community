@@ -1,4 +1,4 @@
-package life.coder.community.community;
+package life.coder.community;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
