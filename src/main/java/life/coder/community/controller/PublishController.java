@@ -1,7 +1,6 @@
 package life.coder.community.controller;
 
 import life.coder.community.mapper.QuestionMapper;
-import life.coder.community.mapper.UserMapper;
 import life.coder.community.model.Question;
 import life.coder.community.model.User;
 import life.coder.community.service.QuestionService;
@@ -27,7 +26,7 @@ public class PublishController {
     @GetMapping("/publish/{id}")
     public String edit(@PathVariable(name = "id") Integer id,
                        Model model) {
-        Question question = questionMapper.getById(id);
+        Question question = questionMapper.selectByPrimaryKey(id);
         model.addAttribute("title", question.getTitle());
         model.addAttribute("description", question.getDescription());
         model.addAttribute("tag", question.getTag());
