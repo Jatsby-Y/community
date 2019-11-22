@@ -2,7 +2,6 @@ package life.coder.community.controller;
 
 import life.coder.community.dto.AccessTokenDTO;
 import life.coder.community.dto.GithubUser;
-import life.coder.community.mapper.UserMapper;
 import life.coder.community.model.User;
 import life.coder.community.provider.GithubProvider;
 import life.coder.community.service.UserService;

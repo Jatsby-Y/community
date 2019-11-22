@@ -17,6 +17,10 @@ body {
     height: 38px;
 }
 
+.media-body {
+    padding-top: 10px;
+}
+
 .text-desc {
     font-size: 12px;
     font-weight: normal;
@@ -35,4 +39,66 @@ body {
 }
 .jumbotron {
     margin: 0px;
+}
+
+.question-tag {
+    margin-right: 5px;
+}
+
+.question-related {
+    line-height: 25px;
+    font-size: 15px;
+    padding-left: 0px;
+    list-style: none;
+}
+
+.QR-Code {
+    width: 100%;
+}
+
+.comment {
+    margin: 10px 0px;
+}
+.sub-comment{
+    border-radius: 7px;
+    margin-top: 10px;
+    border: 1px solid #eee;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+.comments {
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-comment {
+    float: right;
+    margin-bottom: 10px;
+}
+.comment-count  {
+    font-size: 18px;
+}
+
+.menu {
+    color: #999;
+    margin-top: 5px;
+}
+.menu .icon {
+    margin-right: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.menu .comment-icon {
+    font-size: 15px;
+    cursor: pointer;
+}
+.menu .comment-icon:hover {
+    color: #499ef3;
+}
+.menu .icon:hover {
+    color: #499ef3;
+}
+.menu .active {
+    color: #499ef3;
 }
