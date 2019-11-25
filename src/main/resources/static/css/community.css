@@ -114,3 +114,9 @@ body {
 .menu .active {
     color: #499ef3;
 }
+
+.footer {
+    color: #666;
+    padding: 0px 26%;
+    padding-bottom: 10px;
+}

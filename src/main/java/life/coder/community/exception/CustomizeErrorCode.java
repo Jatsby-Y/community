@@ -11,9 +11,14 @@ public enum  CustomizeErrorCode implements ICustomizeErrorCode{
     SYS_ERROR(2004, "服务器冒烟啦，要不然你稍后再试试？"),
     TYPE_PARAM_WRONG(2005, "评论类型错误或不存在"),
     COMMENT_NOT_FOUND(2006, "您回复的不存在，要不您换个试试？"),
-    CONTENT_IS_EMPTY(2007, "评论内容不能为空，请输入内容");
+    CONTENT_IS_EMPTY(2007, "评论内容不能为空，请输入内容"),
+    READ_NOTIFICATION_FAIL(2008, "兄弟你的信息读错啦~"),
+    NOTIFICATION_NOT_FOUND(2009, "消息莫非是不翼而飞了？"),
+    PICTURE_TYPE_WRONG(2010, "文件类型错误啦"),
+    UPLOAD_FAIL(2011, "文件上传失败啦");
     private String message;
     private Integer code;
+
 
 
     @Override
