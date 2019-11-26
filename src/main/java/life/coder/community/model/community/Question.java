@@ -1,4 +1,4 @@
-package life.coder.community.model;
+package life.coder.community.model.community;
 
 public class Question {
     private Long id;

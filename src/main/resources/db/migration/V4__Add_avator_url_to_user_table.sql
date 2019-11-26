@@ -1,2 +1,1 @@
-alter table USER
-	add avator_url varchar(100);
+alter table user add avator_url varchar(256);

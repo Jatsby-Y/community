@@ -6,10 +6,16 @@
 <generatorConfiguration>
     <context id="DB2Tables" targetRuntime="MyBatis3">
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
-        <jdbcConnection driverClass="org.h2.Driver"
-                        connectionURL="jdbc:h2:~/community"
-                        userId="sa"
-                        password="123">
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/community?useSSL=false"
+                        userId="root"
+                        password="520">
+            <property name="nullCatalogMeansCurrent" value="true"/>
+            <property name="remarks" value="true"/>
         </jdbcConnection>
         <javaTypeResolver >
             <property name="forceBigDecimals" value="false" />
@@ -26,7 +32,7 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
         <table tableName="question" domainObjectName="Question"></table>
-        <table tableName="user" domainObjectName="User"></table>
+        <table tableName="user" domainObjectName="User" enableSelectByPrimaryKey="true"></table>
         <table tableName="comment" domainObjectName="Comment"></table>
         <table tableName="notification" domainObjectName="Notification"></table>
     </context>

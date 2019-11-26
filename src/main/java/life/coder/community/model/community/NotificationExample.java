@@ -1,4 +1,4 @@
-package life.coder.community.model;
+package life.coder.community.model.community;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -7,8 +7,6 @@
 ## 工具
 [Git下载](https://git-scm.com/download)
 
-```
 ```bash
    mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
-```
 ```

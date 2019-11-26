@@ -1,1 +1,1 @@
-alter table USER alter column AVATOR_URL rename to AVATAR_URL;
+alter table user change avator_url avatar_url varchar(256);
