@@ -39,7 +39,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.15</version>
+            <version>8.0.18</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -92,7 +92,7 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>6.0.7</version>
                     <configuration>
-                        <url>jdbc:mysql://localhost:3306/community?useSSL=false</url>
+                        <url>jdbc:mysql://localhost:3306/community?useSSL=false&amp;serverTimezone=UTC</url>
                         <user>root</user>
                         <password>123456</password>
                     </configuration>
@@ -105,7 +105,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.15</version>
+                        <version>8.0.18</version>
                     </dependency>
                 </dependencies>
             </plugin>
