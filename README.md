@@ -10,3 +10,6 @@
 ```bash
    mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ```
+```bash
+   java -jar -Dspring.profiles.active=production target/community-0.0.1-SNAPSHOT.jar
+```

@@ -358,6 +358,7 @@
     select
     <if test="distinct">
       distinct
+
     </if>
     <include refid="Base_Column_List" />
     from question

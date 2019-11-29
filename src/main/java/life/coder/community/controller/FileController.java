@@ -4,7 +4,6 @@ import life.coder.community.dto.FileDTO;
 import life.coder.community.exception.CustomizeErrorCode;
 import life.coder.community.exception.CustomizeException;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -12,7 +11,6 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -32,29 +30,26 @@ public class FileController {
         if (fileType != null) {
             if ("GIF".equals(fileType.toUpperCase())|| "PNG".equals(fileType.toUpperCase())|| "JPG".equals(fileType.toUpperCase())) {
                 String trueFileName = String.valueOf(System.currentTimeMillis()) + "." + fileType;
+//                    String resourcesPath = ResourceUtils.getURL("classpath:").getPath();
+//                    String realPath = resourcesPath + "static/images/" + trueFileName;
+                String realPath = "D://Myjava/upload/" + trueFileName;
+                String basePath = request.getScheme()+"://"+request.getServerName()+":"+
+                        request.getServerPort();
+                String fileUrl = basePath + "/upload/" + trueFileName;
                 try {
-                    String resourcesPath = ResourceUtils.getURL("classpath:").getPath();
-                    String realPath = resourcesPath + "static/images/" + trueFileName;
-                    try {
-                        file.transferTo(new File(realPath));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    FileDTO fileDTO = new FileDTO();
-                    fileDTO.setSuccess(1);
-                    fileDTO.setUrl("/images/" + trueFileName);
-                    return fileDTO;
-                } catch (FileNotFoundException e) {
+                    file.transferTo(new File(realPath));
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
+                FileDTO fileDTO = new FileDTO();
+                fileDTO.setSuccess(1);
+//              fileDTO.setUrl("/images/" + trueFileName);
+                fileDTO.setUrl(fileUrl);
+                return fileDTO;
             } else {
                 throw new CustomizeException(CustomizeErrorCode.PICTURE_TYPE_WRONG);
             }
         }
-//        FileDTO fileDTO = new FileDTO();
-//        fileDTO.setSuccess(1);
-//        fileDTO.setUrl("/images/logoTongJi.png");
-//        return fileDTO;
         throw new CustomizeException(CustomizeErrorCode.UPLOAD_FAIL);
     }
 }
